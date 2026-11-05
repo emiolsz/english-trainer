@@ -1,0 +1,12 @@
+{
+  "name": "English Trainer",
+  "short_name": "English Trainer",
+  "description": "Nauka angielskiego B1–B2",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fffaf2",
+  "theme_color": "#123b70",
+  "lang": "pl",
+  "icons": []
+}
