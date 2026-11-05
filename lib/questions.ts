@@ -131,5 +131,16 @@ export const questions:Question[] = [
 {"id":127,"level":"B2","prompt":"If I had backed up my files, I ___ the photos.","options":["will not lose","would not have lost","do not lose","would not lose tomorrow"],"correct":1,"topic":"Third conditional · Technologia i codzienność","explanations":["Nie w tym kontekście. Third conditional mówi o nierealnej sytuacji w przeszłości: would have + III forma.","Tak. Third conditional mówi o nierealnej sytuacji w przeszłości: would have + III forma.","Nie w tym kontekście. Third conditional mówi o nierealnej sytuacji w przeszłości: would have + III forma.","Nie w tym kontekście. Third conditional mówi o nierealnej sytuacji w przeszłości: would have + III forma."]},
 {"id":128,"level":"B2","prompt":"At this time tomorrow, the team ___ the new app.","options":["tested","tests yesterday","will be testing","has tested last week"],"correct":2,"topic":"Future Continuous · Technologia i codzienność","explanations":["Nie w tym kontekście. Future Continuous opisuje czynność trwającą w określonym momencie przyszłości.","Nie w tym kontekście. Future Continuous opisuje czynność trwającą w określonym momencie przyszłości.","Tak. Future Continuous opisuje czynność trwającą w określonym momencie przyszłości.","Nie w tym kontekście. Future Continuous opisuje czynność trwającą w określonym momencie przyszłości."]}
 ];
+import {generatePool} from './generator';
 export const levelQuestions=(level:Level)=>questions.filter(q=>level==='B2'||(level==='B1+'?q.level!=='B2':q.level==='B1'));
-export function drawQuestions(level:Level,count=20):Question[]{const pool=levelQuestions(level);const shuffled=[...pool];for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];}return shuffled.slice(0,Math.min(count,shuffled.length));}
+export function drawQuestions(level:Level,count=20,weakTopics:string[]=[],recentIds:number[]=[]):Question[]{
+ const pool=[...levelQuestions(level),...generatePool(level)];
+ const recent=new Set(recentIds);
+ const fresh=pool.filter(q=>!recent.has(q.id));
+ const source=fresh.length>=count?fresh:pool;
+ const shuffle=(items:Question[])=>{const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+ const targeted=shuffle(source.filter(q=>weakTopics.some(t=>q.topic.startsWith(t))));
+ const other=shuffle(source.filter(q=>!targeted.includes(q)));
+ const targetCount=Math.min(Math.floor(count*.4),targeted.length);
+ return [...targeted.slice(0,targetCount),...other.slice(0,count-targetCount),...targeted.slice(targetCount)].slice(0,count);
+}
