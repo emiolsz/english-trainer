@@ -8,5 +8,12 @@
   "background_color": "#fffaf2",
   "theme_color": "#123b70",
   "lang": "pl",
-  "icons": []
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
