@@ -507,5 +507,63 @@ export const writingLibrary:WritingTask[]=[
       "Use varied vocabulary and sentence structures.",
       "Support your ideas with examples."
     ]
+  },
+  {
+    "level": "B1",
+    "type": "Opinion",
+    "title": "Explain and justify your choice",
+    "instruction": "Choose any topic and describe a choice you would make. Say what you choose and give at least two reasons for your decision. You may compare two options.",
+    "min": 60,
+    "max": 90,
+    "starters": [
+      "I would choose...",
+      "The first reason is...",
+      "Another reason is...",
+      "That is why I prefer..."
+    ],
+    "checks": [
+      "Make your choice clear.",
+      "Give at least two reasons.",
+      "Use because or so to explain your ideas."
+    ]
+  },
+  {
+    "level": "B1+",
+    "type": "Opinion",
+    "title": "Make a choice and explain why",
+    "instruction": "Choose any topic and explain a decision or preference. Compare the available options, support your choice with reasons and a concrete example.",
+    "min": 90,
+    "max": 120,
+    "starters": [
+      "If I had to choose, I would...",
+      "Compared with..., ...",
+      "For example, ...",
+      "For these reasons, I believe..."
+    ],
+    "checks": [
+      "Compare at least two options.",
+      "Give clear reasons and one example.",
+      "Use linking expressions such as although, however or therefore."
+    ]
+  },
+  {
+    "level": "B2",
+    "type": "Argumentative essay",
+    "title": "Justify a decision: your topic, your arguments",
+    "instruction": "Choose a topic freely and defend a decision or preference. Present a reasoned argument, consider a reasonable opposing view and finish with a balanced conclusion.",
+    "min": 120,
+    "max": 160,
+    "starters": [
+      "In my view, the best option is...",
+      "A key argument in favour of this choice is...",
+      "Admittedly, some people might argue that...",
+      "Nevertheless, I would choose..."
+    ],
+    "checks": [
+      "State your position clearly.",
+      "Develop arguments with specific examples.",
+      "Acknowledge a counterargument fairly.",
+      "End with a logical conclusion."
+    ]
   }
 ] as WritingTask[];
