@@ -1,4 +1,4 @@
-export type ReadingTask={question:string;answer:string;meaning:string;distractors:string[]};
+export type ReadingTask={question:string;answer:string;meaning:string;distractors:string[];grammar?:{tense:string;why:string;structure:string;mistake:string}};
 export type ReadingStory={id:string;level:'B1'|'B1+'|'B2';title:string;topic:string;text:string;tasks:ReadingTask[]};
 export const readingStories:ReadingStory[]=[
 {id:'b1-train',level:'B1',title:'The Unexpected Journey',topic:'Podróże',text:'Emma woke up late on Monday morning and missed her usual train. She decided to take the bus instead. On the bus, she met an old friend named Lucy. They had not seen each other for five years. Emma arrived at work twenty minutes late, but she was happy because she had enjoyed their conversation.',tasks:[
