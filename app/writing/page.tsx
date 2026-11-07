@@ -63,3 +63,4 @@ return <div className="stack">
 </section>
 {history.length>0&&<section className="panel stack"><h2>Ostatnie analizy na tym urządzeniu</h2>{history.map((entry,i)=><p key={i}>{entry.date} · {entry.level} · {entry.title} · {entry.words} słów · {entry.mode==='ai'?'AI':'podstawowa'}</p>)}</section>}
 </div>
+  }
