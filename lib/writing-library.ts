@@ -270,5 +270,125 @@ export const writingLibrary:WritingTask[]=[
       "Use precise vocabulary and cautious claims.",
       "Check paragraph coherence."
     ]
+  },
+  {
+    "level": "B1",
+    "type": "Review",
+    "title": "A film or book I recommend",
+    "instruction": "Write a review of a film or book you enjoyed. Give its title, briefly describe the story without revealing the ending, say what you liked or disliked, and explain who you would recommend it to.",
+    "min": 100,
+    "max": 150,
+    "starters": [
+      "I recently watched / read...",
+      "The story is about...",
+      "My favourite part was...",
+      "I would recommend it because..."
+    ],
+    "checks": [
+      "Mention the title and whether it is a film or a book.",
+      "Use Present Simple for the plot and Past Simple for your experience.",
+      "Give an opinion supported by a reason.",
+      "End with a recommendation."
+    ]
+  },
+  {
+    "level": "B1",
+    "type": "Description",
+    "title": "A place that amazed me",
+    "instruction": "Describe a real place that amazed you. Say where it is, when you visited, what you saw and felt, and why you remember it.",
+    "min": 100,
+    "max": 150,
+    "starters": [
+      "One place that truly amazed me was...",
+      "I went there with...",
+      "What impressed me most was...",
+      "I will never forget..."
+    ],
+    "checks": [
+      "Say where and when you visited.",
+      "Describe at least two details using adjectives.",
+      "Use Past Simple for your visit.",
+      "Explain why the place was special."
+    ]
+  },
+  {
+    "level": "B1+",
+    "type": "Review",
+    "title": "A memorable film or book",
+    "instruction": "Write a balanced review of a film or book. Introduce it, summarise the plot without spoilers, discuss characters or style, and evaluate its strengths and weaknesses.",
+    "min": 140,
+    "max": 190,
+    "starters": [
+      "The film / novel tells the story of...",
+      "One of its strongest points is...",
+      "However, I felt that...",
+      "Overall, I would recommend it to..."
+    ],
+    "checks": [
+      "Include both strengths and weaknesses.",
+      "Support your opinion with examples.",
+      "Use linking words such as although and however.",
+      "Give a clear recommendation."
+    ]
+  },
+  {
+    "level": "B1+",
+    "type": "Description",
+    "title": "The place that took my breath away",
+    "instruction": "Describe a place that left a lasting impression on you. Explain its atmosphere, the details you noticed and how the experience changed your perspective.",
+    "min": 140,
+    "max": 190,
+    "starters": [
+      "I still remember the moment when...",
+      "The atmosphere was...",
+      "What struck me most was...",
+      "Looking back, I realise that..."
+    ],
+    "checks": [
+      "Use vivid but accurate descriptive language.",
+      "Include sensory details.",
+      "Combine past tenses and a reflection in the present.",
+      "Explain why it was unforgettable."
+    ]
+  },
+  {
+    "level": "B2",
+    "type": "Critical review",
+    "title": "Review a film or novel",
+    "instruction": "Write a critical review of a film or novel. Evaluate its themes, narrative structure, character development and artistic choices, giving a balanced personal judgement without major spoilers.",
+    "min": 180,
+    "max": 250,
+    "starters": [
+      "At its heart, the work explores...",
+      "The narrative is particularly effective when...",
+      "Despite its strengths...",
+      "Ultimately, it succeeds / falls short because..."
+    ],
+    "checks": [
+      "Analyse rather than merely summarise.",
+      "Support judgements with specific examples.",
+      "Consider at least one limitation.",
+      "End with a nuanced recommendation."
+    ]
+  },
+  {
+    "level": "B2",
+    "type": "Descriptive essay",
+    "title": "A place that changed the way I see the world",
+    "instruction": "Write a descriptive and reflective essay about a place that profoundly impressed you. Create a vivid sense of place and explore what the experience taught you.",
+    "min": 180,
+    "max": 250,
+    "starters": [
+      "I had expected..., but...",
+      "What made the place extraordinary was...",
+      "Beyond its appearance...",
+      "The experience has stayed with me because..."
+    ],
+    "checks": [
+      "Use a clear introduction, development and conclusion.",
+      "Combine sensory description with personal reflection.",
+      "Use varied sentence structures and tenses.",
+      "Avoid generic praise; explain what made it unique."
+    ]
   }
 ] as WritingTask[];
