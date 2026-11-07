@@ -19,7 +19,7 @@ export default function Grammar(){
  const [finished,setFinished]=useState(false);
  const available=lessons.filter((_,i)=>level==='B2'||(level==='B1+'?i<8:i<6));
  function start(){
-  const pool=drawQuestions(level,60).filter(q=>topic==='Wszystkie'||q.topic.split(' · ')[0]===topic);
+  const pool=drawQuestions(level,120).filter(q=>topic==='Wszystkie'||q.topic.split(' · ')[0]===topic);
   const result=pool.slice(0,10);
   setItems(result);setIndex(0);setSelected(null);setScore(0);setFinished(false);
  }
