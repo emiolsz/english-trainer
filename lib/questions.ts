@@ -132,9 +132,10 @@ export const questions:Question[] = [
 {"id":128,"level":"B2","prompt":"At this time tomorrow, the team ___ the new app.","options":["tested","tests yesterday","will be testing","has tested last week"],"correct":2,"topic":"Future Continuous · Technologia i codzienność","explanations":["Nie w tym kontekście. Future Continuous opisuje czynność trwającą w określonym momencie przyszłości.","Nie w tym kontekście. Future Continuous opisuje czynność trwającą w określonym momencie przyszłości.","Tak. Future Continuous opisuje czynność trwającą w określonym momencie przyszłości.","Nie w tym kontekście. Future Continuous opisuje czynność trwającą w określonym momencie przyszłości."]}
 ];
 import {generatePool} from './generator';
+import {creativePool} from './creative-questions';
 export const levelQuestions=(level:Level)=>questions.filter(q=>level==='B2'||(level==='B1+'?q.level!=='B2':q.level==='B1'));
 export function drawQuestions(level:Level,count=20,weakTopics:string[]=[],recentIds:number[]=[],seenIds:number[]=[]):Question[]{
- const pool=[...levelQuestions(level),...generatePool(level)];
+ const pool=[...levelQuestions(level),...generatePool(level),...creativePool(level)];
  const recent=new Set(recentIds),seen=new Set(seenIds);
  const shuffle=(items:Question[]):Question[]=>{
   const a=[...items];
