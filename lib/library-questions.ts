@@ -236,7 +236,7 @@ const themedQuestions:Question[] = [
   {
     "id": 91000,
     "level": "B1",
-    "prompt": "Yesterday, tourists ___ the Colosseum.",
+    "prompt": "Yesterday, tourist ___ the Colosseum.",
     "options": [
       "visit",
       "visited",
@@ -255,7 +255,7 @@ const themedQuestions:Question[] = [
   {
     "id": 91001,
     "level": "B1",
-    "prompt": "Right now, tourists ___ the Colosseum.",
+    "prompt": "Right now, tourist ___ the Colosseum.",
     "options": [
       "visited",
       "visit",
@@ -274,7 +274,7 @@ const themedQuestions:Question[] = [
   {
     "id": 91002,
     "level": "B1+",
-    "prompt": "By the time the meeting began, tourists ___ the Colosseum.",
+    "prompt": "By the time the meeting began, tourist ___ the Colosseum.",
     "options": [
       "has visited",
       "had visited",
@@ -293,7 +293,7 @@ const themedQuestions:Question[] = [
   {
     "id": 91003,
     "level": "B2",
-    "prompt": "If there had been more time, tourists ___ the Colosseum.",
+    "prompt": "If there had been more time, tourist ___ the Colosseum.",
     "options": [
       "will visit",
       "has visited",
