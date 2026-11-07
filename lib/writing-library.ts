@@ -390,5 +390,65 @@ export const writingLibrary:WritingTask[]=[
       "Use varied sentence structures and tenses.",
       "Avoid generic praise; explain what made it unique."
     ]
+  },
+  {
+    "level": "B1",
+    "type": "Personal description",
+    "title": "My strengths and weaknesses",
+    "instruction": "Describe two of your strengths and one weakness. Give examples from everyday life and explain what you would like to improve.",
+    "min": 100,
+    "max": 150,
+    "starters": [
+      "One of my strengths is...",
+      "I am good at...",
+      "However, I sometimes find it difficult to...",
+      "I would like to improve by..."
+    ],
+    "checks": [
+      "Name at least two strengths and one weakness.",
+      "Give a real example.",
+      "Use Present Simple and can/cannot.",
+      "Explain one way to improve."
+    ]
+  },
+  {
+    "level": "B1+",
+    "type": "Personal reflection",
+    "title": "What are my strengths and weaknesses?",
+    "instruction": "Write about your strengths and weaknesses in study, work or everyday life. Give specific examples and explain how you are working on your weaknesses.",
+    "min": 140,
+    "max": 190,
+    "starters": [
+      "I consider myself to be...",
+      "For instance, when I...",
+      "One area I need to work on is...",
+      "To make progress, I have started to..."
+    ],
+    "checks": [
+      "Support your strengths with examples.",
+      "Discuss weaknesses constructively.",
+      "Use linking expressions.",
+      "Describe a realistic improvement plan."
+    ]
+  },
+  {
+    "level": "B2",
+    "type": "Reflective essay",
+    "title": "Knowing myself: strengths, weaknesses and growth",
+    "instruction": "Write a balanced reflective essay evaluating your strengths and weaknesses. Discuss how they influence your decisions and relationships, and what strategies help you develop.",
+    "min": 180,
+    "max": 250,
+    "starters": [
+      "Self-awareness plays an important role in...",
+      "One quality I value in myself is...",
+      "Nevertheless, I have noticed that...",
+      "Over time, I have learned to..."
+    ],
+    "checks": [
+      "Analyse rather than merely list qualities.",
+      "Include specific experiences.",
+      "Use varied structures and nuanced vocabulary.",
+      "Conclude with a personal development goal."
+    ]
   }
 ] as WritingTask[];
