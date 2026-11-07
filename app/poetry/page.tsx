@@ -1,0 +1,22 @@
+'use client';
+import {useState} from 'react';
+import Link from 'next/link';
+import {poetryLessons} from '../../lib/poetry-library';
+export default function Poetry(){
+ const [selected,setSelected]=useState<string|null>(null);
+ const [level,setLevel]=useState<'Wszystkie'|'B1'|'B1+'|'B2'>('Wszystkie');
+ const [answers,setAnswers]=useState<Record<number,number>>({});
+ const [checked,setChecked]=useState<Record<number,boolean>>({});
+ const [vocab,setVocab]=useState(false);
+ const [draft,setDraft]=useState('');
+ const lesson=poetryLessons.find(p=>p.id===selected);
+ const words=draft.trim()?draft.trim().split(/\s+/).length:0;
+ function open(id:string){setSelected(id);setAnswers({});setChecked({});setVocab(false);setDraft('');}
+ return <div className="stack"><h1>🌿 English Through Poetry</h1><p>Czytaj klasyczne wiersze po angielsku, odkrywaj metafory, ćwicz rozumienie i wyrażaj własną opinię. Poziomy B1–B2.</p>
+ {!lesson?<><section className="panel stack"><label htmlFor="poetry-level">Poziom</label><select id="poetry-level" className="field" value={level} onChange={e=>setLevel(e.target.value as typeof level)}><option>Wszystkie</option><option>B1</option><option>B1+</option><option>B2</option></select></section><section className="grid">{poetryLessons.filter(p=>level==='Wszystkie'||p.level===level).map(p=><article className="tile stack" key={p.id}><span className="badge">{p.level} · {p.theme}</span><h2>{p.title}</h2><p>{p.author}</p><p>{p.text?'Pełny oryginał':'Omówienie i link do oryginału'} · 10 wyrażeń · 4 pytania · Writing</p><button className="btn" onClick={()=>open(p.id)}>Otwórz lekcję</button></article>)}</section></>:<>
+ <section className="panel stack"><button className="btn secondary" onClick={()=>setSelected(null)}>← Wybierz inny wiersz</button><span className="badge">{lesson.level} · {lesson.theme}</span><h2>{lesson.title}</h2><p>{lesson.author}</p>{lesson.text?<pre lang="en" style={{whiteSpace:'pre-wrap',fontFamily:'Georgia,serif',fontSize:'1.05rem',lineHeight:1.9,overflowWrap:'anywhere'}}>{lesson.text}</pre>:<p>Ze względu na prawa autorskie pełny tekst tego wiersza nie jest publikowany w aplikacji. Przeczytaj go w serwisie źródłowym, a następnie wróć do ćwiczeń.</p>}<a href={lesson.source} target="_blank" rel="noopener noreferrer">Źródło i tekst wiersza ↗</a><button className="btn secondary" onClick={()=>setVocab(v=>!v)}>{vocab?'Ukryj słowniczek':'Pokaż 10 słówek i wyrażeń'}</button>{vocab&&<div className="grid">{lesson.vocab.map(([word,meaning])=><div className="tile" key={word}><strong>{word}</strong><p>{meaning}</p></div>)}</div>}</section>
+ <section className="panel stack"><h2>Interpretacja i metafory</h2><p>{lesson.interpretation}</p><p className="hint">To jedna z możliwych interpretacji. W poezji warto uzasadniać własne odczytanie.</p></section>
+ <section className="panel stack"><h2>Reading comprehension — 4 pytania</h2>{lesson.questions.map(([question,options,correct,why],i)=><article className="tile stack" key={i}><h3>{i+1}. {question}</h3>{options.map((option,j)=><label className="row" key={j}><input type="radio" name={'poem-q-'+i} checked={answers[i]===j} disabled={checked[i]} onChange={()=>setAnswers(a=>({...a,[i]:j}))}/>{option}</label>)}{!checked[i]?<button className="btn secondary" disabled={answers[i]===undefined} onClick={()=>setChecked(a=>({...a,[i]:true}))}>Sprawdź odpowiedź</button>:<div className="feedback"><strong>{answers[i]===correct?'✓ Poprawnie':'Poprawna odpowiedź: '+options[correct]}</strong><p>{why}</p></div>}</article>)}<p>Wynik: {lesson.questions.filter((q,i)=>checked[i]&&answers[i]===q[2]).length}/{lesson.questions.length}</p></section>
+ <section className="panel stack"><h2>Writing — własna interpretacja</h2><p lang="en">{lesson.writing}</p><p className="hint">B1: 70–100 słów · B1+: 90–120 · B2: 120–160. Uzasadnij opinię i odwołaj się do tekstu.</p><textarea className="field" rows={8} lang="en" value={draft} onChange={e=>setDraft(e.target.value)} placeholder="Write your answer in English..." aria-label="Twoja interpretacja"/><p><strong>Liczba słów: {words}</strong></p><button className="btn secondary" disabled={!draft.trim()} onClick={()=>{try{localStorage.setItem('english-poetry-draft-'+lesson.id,draft);}catch{}navigator.clipboard?.writeText(draft).catch(()=>{});}}>Zapisz lokalnie i skopiuj</button><Link className="btn" href="/writing">Przejdź do korekty Writing →</Link></section></>}
+ <Link className="btn secondary" href="/reading">← Wróć do Reading</Link></div>;
+}
