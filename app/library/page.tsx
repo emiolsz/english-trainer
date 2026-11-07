@@ -4,6 +4,7 @@ import Link from 'next/link';
 type Category='Wszystkie'|'Podróże'|'Przyroda i nauka'|'Rękodzieło'|'Historia i technologia';
 type Entry={slug:string;title:string;subtitle:string;category:Exclude<Category,'Wszystkie'>;level:string;icon:string;description:string;features:string[]};
 const entries:Entry[]=[
+{slug:'/creative/palace-culture',title:'The Great History of the Palace of Culture and Science',subtitle:'Wielka historia Pałacu Kultury i Nauki',category:'Historia i technologia',level:'B1–C1',icon:'🏛️',description:'Budowa, cegły, wysokość, windy, Muzeum Techniki i taras widokowy.',features:['Tekst EN/PL','Notatki techniczne','Gramatyka','Quiz','Źródła']},
 {slug:'/creative/bicycle-history',title:'The History of the Bicycle',subtitle:'Od drezyny do współczesnych przełożeń',category:'Historia i technologia',level:'B1–C1',icon:'🚲',description:'Karl Drais, bicykle, napęd łańcuchowy i interaktywny model przełożeń.',features:['Tekst EN/PL','Model przełożeń','Gramatyka','Quiz','Writing']},
 {slug:'/creative/rome',title:'Two Days in Rome',subtitle:'Co zwiedzić w Rzymie w dwa dni?',category:'Podróże',level:'B1–C1',icon:'🇮🇹',description:'Zabytki, plan zwiedzania, udzielanie rad i porównywanie miejsc.',features:['Tekst EN/PL','Słownictwo','Gramatyka','Quiz','Writing']},
 {slug:'/creative/kilimanjaro',title:'Packing for Kilimanjaro',subtitle:'Co spakować na wyprawę?',category:'Podróże',level:'B1–C1',icon:'🎒',description:'Lista rzeczy do plecaka, instrukcje, konieczność i wyrażanie celu.',features:['Tekst EN/PL','Lista kontrolna','Gramatyka','Quiz','Writing']},
