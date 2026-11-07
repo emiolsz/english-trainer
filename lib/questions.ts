@@ -133,9 +133,10 @@ export const questions:Question[] = [
 ];
 import {generatePool} from './generator';
 import {creativePool} from './creative-questions';
+import {libraryPool} from './library-questions';
 export const levelQuestions=(level:Level)=>questions.filter(q=>level==='B2'||(level==='B1+'?q.level!=='B2':q.level==='B1'));
 export function drawQuestions(level:Level,count=20,weakTopics:string[]=[],recentIds:number[]=[],seenIds:number[]=[]):Question[]{
- const pool=[...levelQuestions(level),...generatePool(level),...creativePool(level)];
+ const pool=[...levelQuestions(level),...generatePool(level),...creativePool(level),...libraryPool(level)];
  const recent=new Set(recentIds),seen=new Set(seenIds);
  const shuffle=(items:Question[]):Question[]=>{
   const a=[...items];
