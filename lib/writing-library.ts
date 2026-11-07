@@ -396,8 +396,8 @@ export const writingLibrary:WritingTask[]=[
     "type": "Personal description",
     "title": "My strengths and weaknesses",
     "instruction": "Describe two of your strengths and one weakness. Give examples from everyday life and explain what you would like to improve.",
-    "min": 100,
-    "max": 150,
+    "min": 60,
+    "max": 90,
     "starters": [
       "One of my strengths is...",
       "I am good at...",
@@ -416,8 +416,8 @@ export const writingLibrary:WritingTask[]=[
     "type": "Personal reflection",
     "title": "What are my strengths and weaknesses?",
     "instruction": "Write about your strengths and weaknesses in study, work or everyday life. Give specific examples and explain how you are working on your weaknesses.",
-    "min": 140,
-    "max": 190,
+    "min": 90,
+    "max": 120,
     "starters": [
       "I consider myself to be...",
       "For instance, when I...",
@@ -436,8 +436,8 @@ export const writingLibrary:WritingTask[]=[
     "type": "Reflective essay",
     "title": "Knowing myself: strengths, weaknesses and growth",
     "instruction": "Write a balanced reflective essay evaluating your strengths and weaknesses. Discuss how they influence your decisions and relationships, and what strategies help you develop.",
-    "min": 180,
-    "max": 250,
+    "min": 120,
+    "max": 160,
     "starters": [
       "Self-awareness plays an important role in...",
       "One quality I value in myself is...",
