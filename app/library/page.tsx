@@ -1,0 +1,24 @@
+'use client';
+import {useMemo,useState} from 'react';
+import Link from 'next/link';
+type Category='Wszystkie'|'Podróże'|'Przyroda i nauka'|'Rękodzieło';
+type Entry={slug:string;title:string;subtitle:string;category:Exclude<Category,'Wszystkie'>;level:string;icon:string;description:string;features:string[]};
+const entries:Entry[]=[
+{slug:'/creative/rome',title:'Two Days in Rome',subtitle:'Co zwiedzić w Rzymie w dwa dni?',category:'Podróże',level:'B1–C1',icon:'🇮🇹',description:'Zabytki, plan zwiedzania, udzielanie rad i porównywanie miejsc.',features:['Tekst EN/PL','Słownictwo','Gramatyka','Quiz','Writing']},
+{slug:'/creative/kilimanjaro',title:'Packing for Kilimanjaro',subtitle:'Co spakować na wyprawę?',category:'Podróże',level:'B1–C1',icon:'🎒',description:'Lista rzeczy do plecaka, instrukcje, konieczność i wyrażanie celu.',features:['Tekst EN/PL','Lista kontrolna','Gramatyka','Quiz','Writing']},
+{slug:'/creative/cat-nutrition',title:'Why Are Cats Obligate Carnivores?',subtitle:'Dlaczego koty są mięsożercami?',category:'Przyroda i nauka',level:'B1–C1',icon:'🐈',description:'Tauryna, arginina, witaminy, mleko, słodycze i żywienie kotów.',features:['Tekst EN/PL','Słownictwo naukowe','Gramatyka','Quiz','Writing']},
+{slug:'/creative',title:'Make a Peyote Bracelet',subtitle:'Bransoletka krok po kroku',category:'Rękodzieło',level:'B1–C1',icon:'🧵',description:'Autorski schemat SVG, polecenia, nazwy materiałów i opis czynności.',features:['Instrukcja EN/PL','Schemat SVG','Gramatyka','Quiz','Writing']}
+];
+const categories:Category[]=['Wszystkie','Podróże','Przyroda i nauka','Rękodzieło'];
+export default function Library(){
+const [query,setQuery]=useState('');const [category,setCategory]=useState<Category>('Wszystkie');
+const filtered=useMemo(()=>entries.filter(e=>(category==='Wszystkie'||e.category===category)&&[e.title,e.subtitle,e.description,e.category].join(' ').toLocaleLowerCase('pl').includes(query.trim().toLocaleLowerCase('pl'))),[query,category]);
+return <div className="stack">
+<section className="hero stack"><span className="badge">English Trainer · Biblioteka B1–C1</span><h1>📚 Biblioteka tematyczna</h1><p>Ucz się angielskiego przez ciekawe artykuły i praktyczne instrukcje. Każda lekcja zawiera angielski tekst, polskie objaśnienia oraz ćwiczenia językowe.</p><p className="hint">Obecnie dostępne: {entries.length} autorskie lekcje. Biblioteka działa bez dodatkowych wywołań AI.</p></section>
+<section className="panel stack"><h2>Znajdź lekcję</h2><label htmlFor="library-search">Szukaj według tytułu lub tematu</label><input id="library-search" className="field" type="search" placeholder="Np. kot, Rzym, bransoletka..." value={query} onChange={e=>setQuery(e.target.value)}/><div className="row" style={{flexWrap:'wrap'}}>{categories.map(c=><button key={c} type="button" className={'btn '+(category===c?'':'secondary')} onClick={()=>setCategory(c)} aria-pressed={category===c}>{c}</button>)}</div><p className="hint">Znaleziono: {filtered.length}</p></section>
+<section className="grid" aria-label="Dostępne lekcje">{filtered.map(e=><article className="panel stack" key={e.slug}><span className="badge">{e.icon} {e.category} · {e.level}</span><h2 style={{margin:0}}>{e.title}</h2><strong>{e.subtitle}</strong><p>{e.description}</p><p className="hint">{e.features.join(' · ')}</p><Link className="btn" href={e.slug} style={{display:'inline-block',width:'fit-content'}}>Otwórz lekcję →</Link></article>)}</section>
+{filtered.length===0&&<section className="panel"><p>Nie znaleziono lekcji. Zmień kategorię lub wyszukiwane słowo.</p><button className="btn secondary" onClick={()=>{setCategory('Wszystkie');setQuery('')}}>Pokaż wszystkie</button></section>}
+<section className="panel stack"><h2>Jak korzystać z biblioteki?</h2><p><strong>1.</strong> Przeczytaj tekst po angielsku. <strong>2.</strong> Porównaj go z polskim tłumaczeniem. <strong>3.</strong> Poznaj słownictwo i analizę gramatyczną B1, B2 lub C1. <strong>4.</strong> Rozwiąż quiz i napisz własną wypowiedź.</p><p>Planowane kolejne działy: historia, medycyna, kosmos, kino i analiza publikacji naukowych. Nie są jeszcze opublikowane jako lekcje.</p><p className="hint">Materiały edukacyjne nie zastępują specjalistycznych porad medycznych, weterynaryjnych ani instrukcji bezpieczeństwa.</p></section>
+<p><Link href="/">← Strona główna</Link></p>
+</div>;
+}
