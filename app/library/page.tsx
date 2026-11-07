@@ -1,16 +1,17 @@
 'use client';
 import {useMemo,useState} from 'react';
 import Link from 'next/link';
-type Category='Wszystkie'|'Podróże'|'Przyroda i nauka'|'Rękodzieło';
+type Category='Wszystkie'|'Podróże'|'Przyroda i nauka'|'Rękodzieło'|'Historia i technologia';
 type Entry={slug:string;title:string;subtitle:string;category:Exclude<Category,'Wszystkie'>;level:string;icon:string;description:string;features:string[]};
 const entries:Entry[]=[
+{slug:'/creative/bicycle-history',title:'The History of the Bicycle',subtitle:'Od drezyny do współczesnych przełożeń',category:'Historia i technologia',level:'B1–C1',icon:'🚲',description:'Karl Drais, bicykle, napęd łańcuchowy i interaktywny model przełożeń.',features:['Tekst EN/PL','Model przełożeń','Gramatyka','Quiz','Writing']},
 {slug:'/creative/rome',title:'Two Days in Rome',subtitle:'Co zwiedzić w Rzymie w dwa dni?',category:'Podróże',level:'B1–C1',icon:'🇮🇹',description:'Zabytki, plan zwiedzania, udzielanie rad i porównywanie miejsc.',features:['Tekst EN/PL','Słownictwo','Gramatyka','Quiz','Writing']},
 {slug:'/creative/kilimanjaro',title:'Packing for Kilimanjaro',subtitle:'Co spakować na wyprawę?',category:'Podróże',level:'B1–C1',icon:'🎒',description:'Lista rzeczy do plecaka, instrukcje, konieczność i wyrażanie celu.',features:['Tekst EN/PL','Lista kontrolna','Gramatyka','Quiz','Writing']},
 {slug:'/creative/schlumbergera',title:'Christmas Cactus and Hummingbirds',subtitle:'Grudnik, kolibry i cykl życia rośliny',category:'Przyroda i nauka',level:'B1–C1',icon:'🌺',description:'Pochodzenie z Brazylii, epifity, zapylanie, owoce i nasiona.',features:['Tekst EN/PL','Słownictwo botaniczne','Gramatyka','Quiz','Writing']},
 {slug:'/creative/cat-nutrition',title:'Why Are Cats Obligate Carnivores?',subtitle:'Dlaczego koty są mięsożercami?',category:'Przyroda i nauka',level:'B1–C1',icon:'🐈',description:'Tauryna, arginina, witaminy, mleko, słodycze i żywienie kotów.',features:['Tekst EN/PL','Słownictwo naukowe','Gramatyka','Quiz','Writing']},
 {slug:'/creative',title:'Make a Peyote Bracelet',subtitle:'Bransoletka krok po kroku',category:'Rękodzieło',level:'B1–C1',icon:'🧵',description:'Autorski schemat SVG, polecenia, nazwy materiałów i opis czynności.',features:['Instrukcja EN/PL','Schemat SVG','Gramatyka','Quiz','Writing']}
 ];
-const categories:Category[]=['Wszystkie','Podróże','Przyroda i nauka','Rękodzieło'];
+const categories:Category[]=['Wszystkie','Podróże','Przyroda i nauka','Rękodzieło','Historia i technologia'];
 export default function Library(){
 const [query,setQuery]=useState('');const [category,setCategory]=useState<Category>('Wszystkie');
 const filtered=useMemo(()=>entries.filter(e=>(category==='Wszystkie'||e.category===category)&&[e.title,e.subtitle,e.description,e.category].join(' ').toLocaleLowerCase('pl').includes(query.trim().toLocaleLowerCase('pl'))),[query,category]);
