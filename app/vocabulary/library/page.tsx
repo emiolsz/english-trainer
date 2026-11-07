@@ -1,7 +1,7 @@
 'use client';
 import {useEffect,useMemo,useState} from 'react';
 import Link from 'next/link';
-import {libraryWords,type LibraryWord} from '../../lib/library-vocabulary';
+import {libraryWords,type LibraryWord} from '../../../lib/library-vocabulary';
 type Progress={step:number;due:number;attempts:number;correct:number};
 type History=Record<string,Progress>;
 const KEY='english-library-vocab-v1';
