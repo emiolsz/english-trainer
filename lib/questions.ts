@@ -133,14 +133,41 @@ export const questions:Question[] = [
 ];
 import {generatePool} from './generator';
 export const levelQuestions=(level:Level)=>questions.filter(q=>level==='B2'||(level==='B1+'?q.level!=='B2':q.level==='B1'));
-export function drawQuestions(level:Level,count=20,weakTopics:string[]=[],recentIds:number[]=[]):Question[]{
+export function drawQuestions(level:Level,count=20,weakTopics:string[]=[],recentIds:number[]=[],seenIds:number[]=[]):Question[]{
  const pool=[...levelQuestions(level),...generatePool(level)];
- const recent=new Set(recentIds);
- const fresh=pool.filter(q=>!recent.has(q.id));
- const source=fresh.length>=count?fresh:pool;
- const shuffle=(items:Question[])=>{const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
- const targeted=shuffle(source.filter(q=>weakTopics.some(t=>q.topic.startsWith(t))));
- const other=shuffle(source.filter(q=>!targeted.includes(q)));
- const targetCount=Math.min(Math.floor(count*.4),targeted.length);
- return [...targeted.slice(0,targetCount),...other.slice(0,count-targetCount),...targeted.slice(targetCount)].slice(0,count);
+ const recent=new Set(recentIds),seen=new Set(seenIds);
+ const shuffle=(items:Question[]):Question[]=>{
+  const a=[...items];
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+ };
+ const topic=(q:Question)=>q.topic.split(' · ')[0];
+ // First use unseen questions, then older questions, and only then recent questions.
+ const tiers=[
+  shuffle(pool.filter(q=>!seen.has(q.id)&&!recent.has(q.id))),
+  shuffle(pool.filter(q=>seen.has(q.id)&&!recent.has(q.id))),
+  shuffle(pool.filter(q=>recent.has(q.id)))
+ ];
+ const result:Question[]=[],used=new Set<number>(),topicCounts=new Map<string,number>();
+ const weak=new Set(weakTopics);
+ const weakLimit=Math.floor(count*.25);
+ let weakCount=0;
+ for(const tier of tiers){
+  while(result.length<count){
+   const available=tier.filter(q=>!used.has(q.id));
+   if(!available.length)break;
+   const topicNames=[...new Set(available.map(topic))];
+   const minCount=Math.min(...topicNames.map(t=>topicCounts.get(t)||0));
+   const leastUsed=topicNames.filter(t=>(topicCounts.get(t)||0)===minCount);
+   const weakCandidates=leastUsed.filter(t=>weak.has(t));
+   const chosenTopic=weakCount<weakLimit&&weakCandidates.length?weakCandidates[Math.floor(Math.random()*weakCandidates.length)]:leastUsed[Math.floor(Math.random()*leastUsed.length)];
+   const candidates=available.filter(q=>topic(q)===chosenTopic);
+   const q=candidates[Math.floor(Math.random()*candidates.length)];
+   result.push(q);used.add(q.id);
+   topicCounts.set(chosenTopic,(topicCounts.get(chosenTopic)||0)+1);
+   if(weak.has(chosenTopic))weakCount++;
+  }
+  if(result.length>=count)break;
+ }
+ return shuffle(result);
 }
