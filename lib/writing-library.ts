@@ -450,5 +450,62 @@ export const writingLibrary:WritingTask[]=[
       "Use varied structures and nuanced vocabulary.",
       "Conclude with a personal development goal."
     ]
+  },
+  {
+    "level": "B1",
+    "type": "Personal description",
+    "title": "My favourite activities",
+    "instruction": "Describe two or three activities you enjoy in your free time. Say how often you do them, who you do them with and why you like them.",
+    "min": 60,
+    "max": 90,
+    "starters": [
+      "In my free time, I enjoy...",
+      "I usually...",
+      "I like it because...",
+      "At weekends, I often..."
+    ],
+    "checks": [
+      "Name two or three activities.",
+      "Use Present Simple and frequency expressions.",
+      "Explain why you enjoy them."
+    ]
+  },
+  {
+    "level": "B1+",
+    "type": "Personal reflection",
+    "title": "How I like to spend my free time",
+    "instruction": "Describe your favourite activities and explain how they influence your mood, relationships or everyday routine. Include examples.",
+    "min": 90,
+    "max": 120,
+    "starters": [
+      "One activity I particularly enjoy is...",
+      "I first became interested in it when...",
+      "It helps me to...",
+      "Although I sometimes..., I still..."
+    ],
+    "checks": [
+      "Give specific examples.",
+      "Use a range of tenses.",
+      "Explain what these activities mean to you."
+    ]
+  },
+  {
+    "level": "B2",
+    "type": "Reflective essay",
+    "title": "The activities that make my life richer",
+    "instruction": "Reflect on the activities you find most rewarding. Explain what motivates you, how your interests have developed and what they contribute to your wellbeing or personal growth.",
+    "min": 120,
+    "max": 160,
+    "starters": [
+      "What I find most rewarding is...",
+      "Over the years, I have developed...",
+      "Beyond simple enjoyment, it allows me to...",
+      "Ultimately, these activities..."
+    ],
+    "checks": [
+      "Develop a clear personal reflection.",
+      "Use varied vocabulary and sentence structures.",
+      "Support your ideas with examples."
+    ]
   }
 ] as WritingTask[];
