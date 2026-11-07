@@ -230,4 +230,1148 @@ export const libraryQuestions:Question[] = [
     ]
   }
 ] as Question[];
-export const libraryPool=(level:Level)=>libraryQuestions.filter(q=>level==='B2'||(level==='B1+'?q.level!=='B2':q.level==='B1'));
+
+// Additional themed practice built around the subjects and vocabulary of all 15 library lessons.
+const themedQuestions:Question[] = [
+  {
+    "id": 91000,
+    "level": "B1",
+    "prompt": "Yesterday, tourists ___ the Colosseum.",
+    "options": [
+      "visit",
+      "visited",
+      "is visiting",
+      "has visited"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Rzym",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91001,
+    "level": "B1",
+    "prompt": "Right now, tourists ___ the Colosseum.",
+    "options": [
+      "visited",
+      "visit",
+      "is visiting",
+      "has visited"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Rzym",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91002,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, tourists ___ the Colosseum.",
+    "options": [
+      "has visited",
+      "had visited",
+      "is visiting",
+      "visit"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Rzym",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91003,
+    "level": "B2",
+    "prompt": "If there had been more time, tourists ___ the Colosseum.",
+    "options": [
+      "will visit",
+      "has visited",
+      "would visit",
+      "would have visited"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Rzym",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91004,
+    "level": "B1",
+    "prompt": "Yesterday, the botanist ___ Schlumbergera flowers.",
+    "options": [
+      "study",
+      "studied",
+      "is studying",
+      "has studied"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Grudnik",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91005,
+    "level": "B1",
+    "prompt": "Right now, the botanist ___ Schlumbergera flowers.",
+    "options": [
+      "studied",
+      "study",
+      "is studying",
+      "has studied"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Grudnik",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91006,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the botanist ___ Schlumbergera flowers.",
+    "options": [
+      "has studied",
+      "had studied",
+      "is studying",
+      "study"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Grudnik",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91007,
+    "level": "B2",
+    "prompt": "If there had been more time, the botanist ___ Schlumbergera flowers.",
+    "options": [
+      "will study",
+      "has studied",
+      "would study",
+      "would have studied"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Grudnik",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91008,
+    "level": "B1",
+    "prompt": "Yesterday, the veterinarian ___ the cat's diet.",
+    "options": [
+      "examine",
+      "examined",
+      "is examining",
+      "has examined"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Koty i żywienie",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91009,
+    "level": "B1",
+    "prompt": "Right now, the veterinarian ___ the cat's diet.",
+    "options": [
+      "examined",
+      "examine",
+      "is examining",
+      "has examined"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Koty i żywienie",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91010,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the veterinarian ___ the cat's diet.",
+    "options": [
+      "has examined",
+      "had examined",
+      "is examining",
+      "examine"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Koty i żywienie",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91011,
+    "level": "B2",
+    "prompt": "If there had been more time, the veterinarian ___ the cat's diet.",
+    "options": [
+      "will examine",
+      "has examined",
+      "would examine",
+      "would have examined"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Koty i żywienie",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91012,
+    "level": "B1",
+    "prompt": "Yesterday, the engineer ___ a bicycle.",
+    "options": [
+      "test",
+      "tested",
+      "is testing",
+      "has tested"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Rower",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91013,
+    "level": "B1",
+    "prompt": "Right now, the engineer ___ a bicycle.",
+    "options": [
+      "tested",
+      "test",
+      "is testing",
+      "has tested"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Rower",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91014,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the engineer ___ a bicycle.",
+    "options": [
+      "has tested",
+      "had tested",
+      "is testing",
+      "test"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Rower",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91015,
+    "level": "B2",
+    "prompt": "If there had been more time, the engineer ___ a bicycle.",
+    "options": [
+      "will test",
+      "has tested",
+      "would test",
+      "would have tested"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Rower",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91016,
+    "level": "B1",
+    "prompt": "Yesterday, the guide ___ the Palace of Culture.",
+    "options": [
+      "describe",
+      "described",
+      "is describing",
+      "has described"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Pałac Kultury i Nauki",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91017,
+    "level": "B1",
+    "prompt": "Right now, the guide ___ the Palace of Culture.",
+    "options": [
+      "described",
+      "describe",
+      "is describing",
+      "has described"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Pałac Kultury i Nauki",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91018,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the guide ___ the Palace of Culture.",
+    "options": [
+      "has described",
+      "had described",
+      "is describing",
+      "describe"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Pałac Kultury i Nauki",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91019,
+    "level": "B2",
+    "prompt": "If there had been more time, the guide ___ the Palace of Culture.",
+    "options": [
+      "will describe",
+      "has described",
+      "would describe",
+      "would have described"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Pałac Kultury i Nauki",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91020,
+    "level": "B1",
+    "prompt": "Yesterday, the archaeologist ___ the palace foundations.",
+    "options": [
+      "examine",
+      "examined",
+      "is examining",
+      "has examined"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Pałac Saski",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91021,
+    "level": "B1",
+    "prompt": "Right now, the archaeologist ___ the palace foundations.",
+    "options": [
+      "examined",
+      "examine",
+      "is examining",
+      "has examined"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Pałac Saski",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91022,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the archaeologist ___ the palace foundations.",
+    "options": [
+      "has examined",
+      "had examined",
+      "is examining",
+      "examine"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Pałac Saski",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91023,
+    "level": "B2",
+    "prompt": "If there had been more time, the archaeologist ___ the palace foundations.",
+    "options": [
+      "will examine",
+      "has examined",
+      "would examine",
+      "would have examined"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Pałac Saski",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91024,
+    "level": "B1",
+    "prompt": "Yesterday, the historian ___ the Warsaw Mermaid monument.",
+    "options": [
+      "study",
+      "studied",
+      "is studying",
+      "has studied"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Syrenka Warszawska",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91025,
+    "level": "B1",
+    "prompt": "Right now, the historian ___ the Warsaw Mermaid monument.",
+    "options": [
+      "studied",
+      "study",
+      "is studying",
+      "has studied"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Syrenka Warszawska",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91026,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the historian ___ the Warsaw Mermaid monument.",
+    "options": [
+      "has studied",
+      "had studied",
+      "is studying",
+      "study"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Syrenka Warszawska",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91027,
+    "level": "B2",
+    "prompt": "If there had been more time, the historian ___ the Warsaw Mermaid monument.",
+    "options": [
+      "will study",
+      "has studied",
+      "would study",
+      "would have studied"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Syrenka Warszawska",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91028,
+    "level": "B1",
+    "prompt": "Yesterday, the researcher ___ ancient DNA.",
+    "options": [
+      "analyse",
+      "analysed",
+      "is analysing",
+      "has analysed"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Genetyka Polaków",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91029,
+    "level": "B1",
+    "prompt": "Right now, the researcher ___ ancient DNA.",
+    "options": [
+      "analysed",
+      "analyse",
+      "is analysing",
+      "has analysed"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Genetyka Polaków",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91030,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the researcher ___ ancient DNA.",
+    "options": [
+      "has analysed",
+      "had analysed",
+      "is analysing",
+      "analyse"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Genetyka Polaków",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91031,
+    "level": "B2",
+    "prompt": "If there had been more time, the researcher ___ ancient DNA.",
+    "options": [
+      "will analyse",
+      "has analysed",
+      "would analyse",
+      "would have analysed"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Genetyka Polaków",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91032,
+    "level": "B1",
+    "prompt": "Yesterday, the archaeologist ___ Slavic burial customs.",
+    "options": [
+      "study",
+      "studied",
+      "is studying",
+      "has studied"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Obrzędy Słowian",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91033,
+    "level": "B1",
+    "prompt": "Right now, the archaeologist ___ Slavic burial customs.",
+    "options": [
+      "studied",
+      "study",
+      "is studying",
+      "has studied"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Obrzędy Słowian",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91034,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the archaeologist ___ Slavic burial customs.",
+    "options": [
+      "has studied",
+      "had studied",
+      "is studying",
+      "study"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Obrzędy Słowian",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91035,
+    "level": "B2",
+    "prompt": "If there had been more time, the archaeologist ___ Slavic burial customs.",
+    "options": [
+      "will study",
+      "has studied",
+      "would study",
+      "would have studied"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Obrzędy Słowian",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91036,
+    "level": "B1",
+    "prompt": "Yesterday, the chef ___ a traditional paella.",
+    "options": [
+      "prepare",
+      "prepared",
+      "is preparing",
+      "has prepared"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Walencja i La Pepica",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91037,
+    "level": "B1",
+    "prompt": "Right now, the chef ___ a traditional paella.",
+    "options": [
+      "prepared",
+      "prepare",
+      "is preparing",
+      "has prepared"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Walencja i La Pepica",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91038,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the chef ___ a traditional paella.",
+    "options": [
+      "has prepared",
+      "had prepared",
+      "is preparing",
+      "prepare"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Walencja i La Pepica",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91039,
+    "level": "B2",
+    "prompt": "If there had been more time, the chef ___ a traditional paella.",
+    "options": [
+      "will prepare",
+      "has prepared",
+      "would prepare",
+      "would have prepared"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Walencja i La Pepica",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91040,
+    "level": "B1",
+    "prompt": "Yesterday, the craftsperson ___ a beaded bracelet.",
+    "options": [
+      "create",
+      "created",
+      "is creating",
+      "has created"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Bransoletka peyote",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91041,
+    "level": "B1",
+    "prompt": "Right now, the craftsperson ___ a beaded bracelet.",
+    "options": [
+      "created",
+      "create",
+      "is creating",
+      "has created"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Bransoletka peyote",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91042,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the craftsperson ___ a beaded bracelet.",
+    "options": [
+      "has created",
+      "had created",
+      "is creating",
+      "create"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Bransoletka peyote",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91043,
+    "level": "B2",
+    "prompt": "If there had been more time, the craftsperson ___ a beaded bracelet.",
+    "options": [
+      "will create",
+      "has created",
+      "would create",
+      "would have created"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Bransoletka peyote",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91044,
+    "level": "B1",
+    "prompt": "Yesterday, the student ___ Plato's philosophy.",
+    "options": [
+      "discuss",
+      "discussed",
+      "is discussing",
+      "has discussed"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Platon",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91045,
+    "level": "B1",
+    "prompt": "Right now, the student ___ Plato's philosophy.",
+    "options": [
+      "discussed",
+      "discuss",
+      "is discussing",
+      "has discussed"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Platon",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91046,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the student ___ Plato's philosophy.",
+    "options": [
+      "has discussed",
+      "had discussed",
+      "is discussing",
+      "discuss"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Platon",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91047,
+    "level": "B2",
+    "prompt": "If there had been more time, the student ___ Plato's philosophy.",
+    "options": [
+      "will discuss",
+      "has discussed",
+      "would discuss",
+      "would have discussed"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Platon",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91048,
+    "level": "B1",
+    "prompt": "Yesterday, the hiker ___ a waterproof jacket.",
+    "options": [
+      "pack",
+      "packed",
+      "is packing",
+      "has packed"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Kilimandżaro",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91049,
+    "level": "B1",
+    "prompt": "Right now, the hiker ___ a waterproof jacket.",
+    "options": [
+      "packed",
+      "pack",
+      "is packing",
+      "has packed"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Kilimandżaro",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91050,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the hiker ___ a waterproof jacket.",
+    "options": [
+      "has packed",
+      "had packed",
+      "is packing",
+      "pack"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Kilimandżaro",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91051,
+    "level": "B2",
+    "prompt": "If there had been more time, the hiker ___ a waterproof jacket.",
+    "options": [
+      "will pack",
+      "has packed",
+      "would pack",
+      "would have packed"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Kilimandżaro",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91052,
+    "level": "B1",
+    "prompt": "Yesterday, the scientist ___ radioactive elements.",
+    "options": [
+      "examine",
+      "examined",
+      "is examining",
+      "has examined"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Maria Skłodowska-Curie",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91053,
+    "level": "B1",
+    "prompt": "Right now, the scientist ___ radioactive elements.",
+    "options": [
+      "examined",
+      "examine",
+      "is examining",
+      "has examined"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Maria Skłodowska-Curie",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91054,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the scientist ___ radioactive elements.",
+    "options": [
+      "has examined",
+      "had examined",
+      "is examining",
+      "examine"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Maria Skłodowska-Curie",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91055,
+    "level": "B2",
+    "prompt": "If there had been more time, the scientist ___ radioactive elements.",
+    "options": [
+      "will examine",
+      "has examined",
+      "would examine",
+      "would have examined"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Maria Skłodowska-Curie",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  },
+  {
+    "id": 91056,
+    "level": "B1",
+    "prompt": "Yesterday, the musician ___ a new composition.",
+    "options": [
+      "rehearse",
+      "rehearsed",
+      "is rehearsing",
+      "has rehearsed"
+    ],
+    "correct": 1,
+    "topic": "Past Simple · Z biblioteki: Krzesimir Dębski",
+    "explanations": [
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Tak. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple.",
+      "Nie. Yesterday wskazuje zakończoną czynność w przeszłości: Past Simple."
+    ]
+  },
+  {
+    "id": 91057,
+    "level": "B1",
+    "prompt": "Right now, the musician ___ a new composition.",
+    "options": [
+      "rehearsed",
+      "rehearse",
+      "is rehearsing",
+      "has rehearsed"
+    ],
+    "correct": 2,
+    "topic": "Present Continuous · Z biblioteki: Krzesimir Dębski",
+    "explanations": [
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing.",
+      "Tak. Right now wymaga is + czasownik z końcówką -ing.",
+      "Nie. Right now wymaga is + czasownik z końcówką -ing."
+    ]
+  },
+  {
+    "id": 91058,
+    "level": "B1+",
+    "prompt": "By the time the meeting began, the musician ___ a new composition.",
+    "options": [
+      "has rehearsed",
+      "had rehearsed",
+      "is rehearsing",
+      "rehearse"
+    ],
+    "correct": 1,
+    "topic": "Past Perfect · Z biblioteki: Krzesimir Dębski",
+    "explanations": [
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Tak. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma.",
+      "Nie. By the time + Past Simple wskazuje wcześniejszą czynność w Past Perfect: had + III forma."
+    ]
+  },
+  {
+    "id": 91059,
+    "level": "B2",
+    "prompt": "If there had been more time, the musician ___ a new composition.",
+    "options": [
+      "will rehearse",
+      "has rehearsed",
+      "would rehearse",
+      "would have rehearsed"
+    ],
+    "correct": 3,
+    "topic": "Third conditional · Z biblioteki: Krzesimir Dębski",
+    "explanations": [
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Nie. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma.",
+      "Tak. Nierealny warunek w przeszłości: if + Past Perfect, would have + III forma."
+    ]
+  }
+] as Question[];
+export const libraryPool=(level:Level)=>[...libraryQuestions,...themedQuestions].filter(q=>level==='B2'||(level==='B1+'?q.level!=='B2':q.level==='B1'));
